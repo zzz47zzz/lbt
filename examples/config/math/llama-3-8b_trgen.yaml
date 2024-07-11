@@ -3,7 +3,8 @@ teaching_plans: no demo
 student_model_cfgs:
   - model_type: huggingface
     model_cfg:
-      path: meta-llama/Meta-Llama-3-8B-Instruct
+      path: /dev_data/zjh/llama-models/Meta-Llama-3-8B-Instruct
+      # path: /dev_data/zjh/llama-models/Meta-Llama-3-8B
       name: llama-3-8b
 
 general_student_sample_cfg:

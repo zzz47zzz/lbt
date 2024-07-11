@@ -2,10 +2,26 @@ import os
 import copy
 import yaml
 import argparse
+import numpy as np
+import torch
+import random
+import time
 
 from tqdm import tqdm
 from datasets import Dataset, load_from_disk
 
+import sys
+import wandb
+from accelerate import Accelerator
+from accelerate.utils import find_executable_batch_size
+# Specify CUDA_VISIBLE_DEVICES in the command, 
+# e.g., CUDA_VISIBLE_DEVICES=0,1 nohup bash exp_on_b7server_0.sh
+# ---------------------- only for debug -----------------------
+# import os
+# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+# -------------------------------------------------------------
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from lbt.base import Component
 from lbt.test import test_single_student, aggregate_scores
 from lbt.utils.log import getLogger
@@ -25,7 +41,60 @@ if __name__ == "__main__":
         default=None,
     )
     parser.add_argument("--exam-dataset-file", type=str, required=True)
+
+    parser.add_argument("--seed", type=int, default=None)
+
+    parser.add_argument("--is_wandb", default=False, type=bool, help="if using wandb")
+    parser.add_argument("--wandb_entity", type=str, default=None, help="wandb entity name")
+    parser.add_argument("--wandb_project", type=str, default=None, help="wandb project name")
+    parser.add_argument("--exp_prefix", type=str, default="default", help="Prefix for experiment name")
+    parser.add_argument("--wandb_name", type=str, default="default", help="Experiment name")
     args = parser.parse_args()
+
+    # ------------------------------------------------------------------------------------------------------------------------=====
+    
+    # Initialize Accelerator
+    accelerator = Accelerator(log_with="wandb")
+
+    # nonlocal accelerator # Ensure they can be used in our context
+    accelerator.free_memory() # Free all lingering references
+    
+    # Using Fixed Random Seed
+    if args.seed:
+        random.seed(args.seed)
+        np.random.seed(args.seed)
+        torch.manual_seed(args.seed)
+        torch.cuda.manual_seed(args.seed)
+        torch.backends.cudnn.deterministic = True
+
+
+    # Initialize wandb
+    assert wandb is not None, "Wandb not installed, please install it or run without wandb"
+    # retry request (handles connection errors, timeouts)
+    try_cnt = 0
+    while try_cnt<5:
+        try:
+            accelerator.init_trackers(
+                project_name=args.wandb_project,
+                init_kwargs={
+                    "wandb":{
+                        'entity':args.wandb_entity, 
+                        'name':args.wandb_name,
+                        'config':vars(args), 
+                        'settings':wandb.Settings(start_method="fork"),
+                        # Disable wandb when debug
+                        'mode': 'disabled' if 'default' in args.exp_prefix else 'online' if params.is_wandb else 'offline'
+                    }
+                }
+            )
+            # params.__setattr__('wandb_url', wandb.run.get_url() if params.is_wandb else '')
+            break
+        except Exception as e:
+            print(str(e))
+            print("Retrying Connecting wandb...")
+            try_cnt+=1
+            time.sleep(120)
+
 
     with open(args.cfg_file, "r") as rf:
         cfg = yaml.safe_load(rf)
@@ -124,7 +193,8 @@ if __name__ == "__main__":
     # exam_gt_rationales List[str]: exam_gt_answers: List[str],
     # scores: Dict[str, float], exam_details: Dict[str, List]
     output_items = []
-    for teaching_plan in tqdm(teaching_plans):
+    scores_list = [] # store all scores for logging 
+    for teaching_i, teaching_plan in tqdm(enumerate(teaching_plans)):
         teaching_item_question_only = False
 
         if teaching_plan:
@@ -182,8 +252,15 @@ if __name__ == "__main__":
             }
             score = aggregate_scores(single_student_scores)
             output_item["scores"][student.name] = score
-
+            scores_list.append(score)
+        if accelerator.is_main_process:
+            accelerator.log({'latest_10_mean_score':np.mean(scores_list[-10:])},step=teaching_i)
         output_items.append(output_item)
+
+    if accelerator.is_main_process:
+        accelerator.log({'score_list':scores_list},step=teaching_i)
+    # End Wandb
+    accelerator.end_training()
 
     # Save the results
     output_dataset = Dataset.from_list(output_items)

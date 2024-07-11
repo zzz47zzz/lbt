@@ -5,10 +5,13 @@ from datetime import datetime
 import dotenv
 import gym
 import leetcode
-import leetcode.auth
+# import leetcode.auth
 
-from .types import LeetCodeSubmission
-from .leetcode import id_from_slug
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
+
+from lbt.datasets_adapter.leetcode_sub.types import LeetCodeSubmission
+from lbt.datasets_adapter.leetcode_sub.leetcode import id_from_slug
 
 dotenv.load_dotenv()
 

@@ -13,7 +13,8 @@ from tenacity import (
     wait_random_exponential,
 )
 
-
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from lbt.base import Component
 
 
