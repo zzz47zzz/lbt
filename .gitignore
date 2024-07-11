@@ -1,5 +1,6 @@
 **/.DS_Store
 
+wandb/
 output/
 examples/
 results/
@@ -25,3 +26,6 @@ examples/apps
 examples/apps_bkp
 examples/code_contests
 examples/code_contests_bkp
+
+*.log
+*.out
