@@ -4,7 +4,7 @@ wandb_setting_common='--is_wandb True --wandb_project LbT --wandb_entity junhao-
 wandb_setting_specific='--wandb_name step2_math'
 
 
-for split_i in $(seq 0 1);
+for split_i in $(seq 0 0);
 do
     echo 'Split '$split_i
 
@@ -12,7 +12,7 @@ do
                             --output-path ./output/student_exp_default/teacher_exp_default_exams/math200_r256s$split_i \
                             --teaching-dataset-file ./output/teacher_exp_default/teaching/math200_r256s$split_i \
                             --exam-dataset-file ./examples/datasets/math/snapshots \
-                            $wandb_setting $wandb_setting_specific
+                            $wandb_setting_common $wandb_setting_specific
     
 
 done

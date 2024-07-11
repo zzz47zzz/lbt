@@ -1,0 +1,138 @@
+2024-07-11 22:53:27,300 INFO    StreamThr :104883 [internal.py:wandb_internal():85] W&B internal server running at pid: 104883, started at: 2024-07-11 22:53:27.299813
+2024-07-11 22:53:27,302 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status
+2024-07-11 22:53:27,309 INFO    WriterThread:104883 [datastore.py:open_for_write():87] open: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/run-lpupvkd2.wandb
+2024-07-11 22:53:27,309 DEBUG   SenderThread:104883 [sender.py:send():379] send: header
+2024-07-11 22:53:27,323 DEBUG   SenderThread:104883 [sender.py:send():379] send: run
+2024-07-11 22:53:28,264 INFO    SenderThread:104883 [dir_watcher.py:__init__():211] watching files in: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files
+2024-07-11 22:53:28,264 INFO    SenderThread:104883 [sender.py:_start_run_threads():1188] run started: lpupvkd2 with start time 1720709607.299197
+2024-07-11 22:53:28,272 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: check_version
+2024-07-11 22:53:28,272 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: check_version
+2024-07-11 22:53:28,631 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: run_start
+2024-07-11 22:53:28,636 DEBUG   HandlerThread:104883 [system_info.py:__init__():26] System info init
+2024-07-11 22:53:28,637 DEBUG   HandlerThread:104883 [system_info.py:__init__():41] System info init done
+2024-07-11 22:53:28,637 INFO    HandlerThread:104883 [system_monitor.py:start():194] Starting system monitor
+2024-07-11 22:53:28,637 INFO    HandlerThread:104883 [system_monitor.py:probe():214] Collecting system info
+2024-07-11 22:53:28,638 INFO    SystemMonitor:104883 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-07-11 22:53:28,641 INFO    SystemMonitor:104883 [interfaces.py:start():188] Started cpu monitoring
+2024-07-11 22:53:28,643 INFO    SystemMonitor:104883 [interfaces.py:start():188] Started disk monitoring
+2024-07-11 22:53:28,646 INFO    SystemMonitor:104883 [interfaces.py:start():188] Started gpu monitoring
+2024-07-11 22:53:28,649 INFO    SystemMonitor:104883 [interfaces.py:start():188] Started memory monitoring
+2024-07-11 22:53:28,653 INFO    SystemMonitor:104883 [interfaces.py:start():188] Started network monitoring
+2024-07-11 22:53:28,676 DEBUG   HandlerThread:104883 [system_info.py:probe():152] Probing system
+2024-07-11 22:53:28,688 DEBUG   HandlerThread:104883 [system_info.py:_probe_git():137] Probing git
+2024-07-11 22:53:28,705 DEBUG   HandlerThread:104883 [system_info.py:_probe_git():145] Probing git done
+2024-07-11 22:53:28,705 DEBUG   HandlerThread:104883 [system_info.py:probe():200] Probing system done
+2024-07-11 22:53:28,705 DEBUG   HandlerThread:104883 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-41-generic-x86_64-with-glibc2.10', 'python': '3.8.0', 'heartbeatAt': '2024-07-11T14:53:28.676990', 'startedAt': '2024-07-11T14:53:27.291519', 'docker': None, 'cuda': None, 'args': ('./examples/config/math/llama-3-8b_exam.yaml', '--output-path', './output/student_exp_default/teacher_exp_default_exams/math200_r256s0', '--teaching-dataset-file', './output/teacher_exp_default/teaching/math200_r256s0', '--exam-dataset-file', './examples/datasets/math/snapshots'), 'state': 'running', 'program': '/dev_data/zjh/lbt/scripts/exam.py', 'codePathLocal': 'scripts/exam.py', 'codePath': 'scripts/exam.py', 'git': {'remote': 'https://github.com/zzz47zzz/lbt', 'commit': 'd30ae51e47c6f9291416ebfc769886cc4ab3507e'}, 'email': '“zhengjunhao2hqf@163.com”', 'root': '/dev_data/zjh/lbt', 'host': 'zjh-System-Product-Name', 'username': 'zjh', 'executable': '/home/zjh/anaconda3/envs/py38/bin/python', 'cpu_count': 12, 'cpu_count_logical': 20, 'cpu_freq': {'current': 0.9393500000000004, 'min': 800.0, 'max': 4700.0}, 'cpu_freq_per_core': [{'current': 1.2, 'min': 800.0, 'max': 4900.0}, {'current': 1.2, 'min': 800.0, 'max': 4900.0}, {'current': 0.8, 'min': 800.0, 'max': 4900.0}, {'current': 0.799, 'min': 800.0, 'max': 4900.0}, {'current': 1.13, 'min': 800.0, 'max': 4900.0}, {'current': 0.8, 'min': 800.0, 'max': 4900.0}, {'current': 1.058, 'min': 800.0, 'max': 4900.0}, {'current': 1.062, 'min': 800.0, 'max': 4900.0}, {'current': 0.801, 'min': 800.0, 'max': 4900.0}, {'current': 1.061, 'min': 800.0, 'max': 4900.0}, {'current': 0.799, 'min': 800.0, 'max': 4900.0}, {'current': 0.799, 'min': 800.0, 'max': 4900.0}, {'current': 0.801, 'min': 800.0, 'max': 5000.0}, {'current': 0.8, 'min': 800.0, 'max': 5000.0}, {'current': 0.791, 'min': 800.0, 'max': 5000.0}, {'current': 0.8, 'min': 800.0, 'max': 5000.0}, {'current': 0.8, 'min': 800.0, 'max': 3800.0}, {'current': 0.8, 'min': 800.0, 'max': 3800.0}, {'current': 0.8, 'min': 800.0, 'max': 3800.0}, {'current': 0.799, 'min': 800.0, 'max': 3800.0}], 'disk': {'/': {'total': 915.3232879638672, 'used': 223.64888381958008}}, 'gpu': 'NVIDIA GeForce RTX 3090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}], 'memory': {'total': 62.60363006591797}}
+2024-07-11 22:53:28,705 INFO    HandlerThread:104883 [system_monitor.py:probe():224] Finished collecting system info
+2024-07-11 22:53:28,706 INFO    HandlerThread:104883 [system_monitor.py:probe():227] Publishing system info
+2024-07-11 22:53:28,706 DEBUG   HandlerThread:104883 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-07-11 22:53:29,266 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_created():271] file/dir created: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/conda-environment.yaml
+2024-07-11 22:53:35,998 DEBUG   HandlerThread:104883 [system_info.py:_save_conda():224] Saving conda packages done
+2024-07-11 22:53:36,001 INFO    HandlerThread:104883 [system_monitor.py:probe():229] Finished publishing system info
+2024-07-11 22:53:36,010 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:53:36,010 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: keepalive
+2024-07-11 22:53:36,010 DEBUG   SenderThread:104883 [sender.py:send():379] send: files
+2024-07-11 22:53:36,011 INFO    SenderThread:104883 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-07-11 22:53:36,266 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/conda-environment.yaml
+2024-07-11 22:53:36,266 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_created():271] file/dir created: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/wandb-metadata.json
+2024-07-11 22:53:36,277 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: python_packages
+2024-07-11 22:53:36,277 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-11 22:53:36,278 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: python_packages
+2024-07-11 22:53:36,278 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:36,278 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: stop_status
+2024-07-11 22:53:36,714 DEBUG   SenderThread:104883 [sender.py:send():379] send: telemetry
+2024-07-11 22:53:37,266 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_created():271] file/dir created: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/requirements.txt
+2024-07-11 22:53:37,267 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_created():271] file/dir created: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/output.log
+2024-07-11 22:53:37,278 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:37,750 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:53:38,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:39,267 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/output.log
+2024-07-11 22:53:39,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:40,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:41,268 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/output.log
+2024-07-11 22:53:41,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:42,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:43,269 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/output.log
+2024-07-11 22:53:43,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:43,520 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:53:44,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:45,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:46,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:47,280 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:48,280 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:49,278 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:53:49,280 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:50,280 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:51,276 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-11 22:53:51,276 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: stop_status
+2024-07-11 22:53:51,319 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:52,280 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:53,283 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:54,283 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:54,772 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:53:55,274 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/output.log
+2024-07-11 22:53:55,283 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:56,283 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:57,286 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:58,267 DEBUG   SenderThread:104883 [sender.py:send():379] send: telemetry
+2024-07-11 22:53:58,307 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-11 22:53:58,310 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:53:59,296 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:00,296 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:00,361 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:54:01,279 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/config.yaml
+2024-07-11 22:54:01,279 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/output.log
+2024-07-11 22:54:01,296 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:02,296 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:03,296 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:04,296 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:05,296 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:06,276 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-11 22:54:06,277 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: stop_status
+2024-07-11 22:54:06,319 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:06,620 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:54:07,297 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:08,297 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:09,199 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-11 22:54:09,200 DEBUG   SenderThread:104883 [sender.py:send():379] send: history
+2024-07-11 22:54:09,200 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: summary_record
+2024-07-11 22:54:09,203 INFO    SenderThread:104883 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-11 22:54:09,281 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_created():271] file/dir created: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/wandb-summary.json
+2024-07-11 22:54:09,297 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:10,297 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:11,282 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/output.log
+2024-07-11 22:54:11,297 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:12,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:54:12,297 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:13,297 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:14,298 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:15,298 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:16,298 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:17,279 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:54:17,298 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:18,298 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:19,298 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:20,299 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:21,276 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-11 22:54:21,277 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: stop_status
+2024-07-11 22:54:21,319 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:22,299 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:22,632 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:54:23,299 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:24,299 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:25,299 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:26,299 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:27,300 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:28,280 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: status_report
+2024-07-11 22:54:28,300 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:28,654 DEBUG   SystemMonitor:104883 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-07-11 22:54:28,656 DEBUG   SenderThread:104883 [sender.py:send():379] send: stats
+2024-07-11 22:54:29,300 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:30,300 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:31,300 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-11 22:54:31,921 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-11 22:54:31,922 DEBUG   SenderThread:104883 [sender.py:send():379] send: history
+2024-07-11 22:54:31,922 DEBUG   SenderThread:104883 [sender.py:send_request():406] send_request: summary_record
+2024-07-11 22:54:31,922 INFO    SenderThread:104883 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-11 22:54:32,288 INFO    Thread-17 :104883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dev_data/zjh/lbt/wandb/run-20240711_225327-lpupvkd2/files/wandb-summary.json
+2024-07-11 22:54:32,300 DEBUG   HandlerThread:104883 [handler.py:handle_request():158] handle_request: internal_messages

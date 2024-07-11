@@ -83,7 +83,7 @@ if __name__ == "__main__":
                         'config':vars(args), 
                         'settings':wandb.Settings(start_method="fork"),
                         # Disable wandb when debug
-                        'mode': 'disabled' if 'default' in args.exp_prefix else 'online' if params.is_wandb else 'offline'
+                        'mode': 'disabled' if 'default' in args.exp_prefix else 'online' if args.is_wandb else 'offline'
                     }
                 }
             )
@@ -254,7 +254,10 @@ if __name__ == "__main__":
             output_item["scores"][student.name] = score
             scores_list.append(score)
         if accelerator.is_main_process:
-            accelerator.log({'latest_10_mean_score':np.mean(scores_list[-10:])},step=teaching_i)
+            accelerator.log({
+                'latest_10_mean_score':np.mean(scores_list[-10:]),
+                'latest_10_max_score':np.max(scores_list[-10:])
+                },step=teaching_i)
         output_items.append(output_item)
 
     if accelerator.is_main_process:

@@ -1,0 +1,80 @@
+wandb_version: 1
+
+cfg_file:
+  desc: null
+  value: ./examples/config/math/llama-3-8b_exam.yaml
+output_path:
+  desc: null
+  value: ./output/student_exp_default/teacher_exp_default_exams/math200_r256s0
+teaching_dataset_file:
+  desc: null
+  value: ./output/teacher_exp_default/teaching/math200_r256s0
+exam_dataset_file:
+  desc: null
+  value: ./examples/datasets/math/snapshots
+seed:
+  desc: null
+  value: null
+is_wandb:
+  desc: null
+  value: true
+wandb_entity:
+  desc: null
+  value: junhao-zheng
+wandb_project:
+  desc: null
+  value: LbT
+exp_prefix:
+  desc: null
+  value: debug
+wandb_name:
+  desc: null
+  value: default
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.0
+    cli_version: 0.17.4
+    framework: huggingface
+    huggingface_version: 4.42.3
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1720709607
+    t:
+      1:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      - 12
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      - 95
+      2:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      - 12
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      - 95
+      3:
+      - 13
+      - 16
+      - 23
+      - 61
+      4: 3.8.0
+      5: 0.17.4
+      6: 4.42.3
+      8:
+      - 6
+      13: linux-x86_64

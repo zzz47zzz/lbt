@@ -1,0 +1,160 @@
+{
+    "os": "Linux-6.5.0-41-generic-x86_64-with-glibc2.10",
+    "python": "3.8.0",
+    "heartbeatAt": "2024-07-11T14:53:28.676990",
+    "startedAt": "2024-07-11T14:53:27.291519",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "./examples/config/math/llama-3-8b_exam.yaml",
+        "--output-path",
+        "./output/student_exp_default/teacher_exp_default_exams/math200_r256s0",
+        "--teaching-dataset-file",
+        "./output/teacher_exp_default/teaching/math200_r256s0",
+        "--exam-dataset-file",
+        "./examples/datasets/math/snapshots"
+    ],
+    "state": "running",
+    "program": "/dev_data/zjh/lbt/scripts/exam.py",
+    "codePathLocal": "scripts/exam.py",
+    "codePath": "scripts/exam.py",
+    "git": {
+        "remote": "https://github.com/zzz47zzz/lbt",
+        "commit": "d30ae51e47c6f9291416ebfc769886cc4ab3507e"
+    },
+    "email": "\u201czhengjunhao2hqf@163.com\u201d",
+    "root": "/dev_data/zjh/lbt",
+    "host": "zjh-System-Product-Name",
+    "username": "zjh",
+    "executable": "/home/zjh/anaconda3/envs/py38/bin/python",
+    "cpu_count": 12,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 0.9393500000000004,
+        "min": 800.0,
+        "max": 4700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1.2,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 1.2,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.799,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 1.13,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 1.058,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 1.062,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.801,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 1.061,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.799,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.799,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.801,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 0.791,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 0.799,
+            "min": 800.0,
+            "max": 3800.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 915.3232879638672,
+            "used": 223.64888381958008
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25769803776
+        },
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 62.60363006591797
+    }
+}

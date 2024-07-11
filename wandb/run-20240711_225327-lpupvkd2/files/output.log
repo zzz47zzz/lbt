@@ -1,0 +1,83 @@
+07/11 10:53:36 PM exam                INFO: Loaded teaching dataset from ./output/teacher_exp_default/teaching/math200_r256s0, fields: {'question': Value(dtype='string', id=None), 'solution': Value(dtype='string', id=None), 'answer': Value(dtype='string', id=None), 'subject': Value(dtype='string', id=None), 'level': Value(dtype='int64', id=None), 'unique_id': Value(dtype='string', id=None)}
+07/11 10:53:36 PM exam                INFO: Use the `solution` field in ./output/teacher_exp_default/teaching/math200_r256s0 as the demonstration.
+07/11 10:53:36 PM exam                INFO: Loaded exam dataset from ./examples/datasets/math/snapshots, fields: {'question': Value(dtype='string', id=None), 'level': Value(dtype='int64', id=None), 'subject': Value(dtype='string', id=None), 'solution': Value(dtype='string', id=None), 'is_static': Value(dtype='bool', id=None), 'answer': Value(dtype='string', id=None), 'unique_id': Value(dtype='string', id=None)}
+07/11 10:53:36 PM exam                INFO: Use the `solution` field in ./examples/datasets/math/snapshots as the GT to measure scores.
+07/11 10:53:36 PM registry            INFO: Component [exam_maker] type： func, lbt.exam_maker.FunctionalExamMaker
+07/11 10:53:36 PM registry            INFO: exam_maker `func` config:
+  selected_indexes: null
+  num_exam_questions: 3
+  num_repetitions: 3
+07/11 10:53:36 PM registry            INFO: Component [exam_prompter] type： basic, lbt.exam_maker.ExamPrompter
+07/11 10:53:36 PM registry            INFO: exam_prompter `basic` config:
+  debug_template: null
+  instruction: 'Your task is to answer the last question below. Give step by step reasoning
+    before you answer. When you''re ready to answer, please wrap your answer and conclude
+    using the format
+    ''''''
+    [[Final Answer]]:
+    $ANSWER$
+    ''''''
+    '
+  use_multi_round_conv: false
+  stub_teaching_items:
+  - answer: '[2,5)'
+    question: Find the domain of the expression $\frac{\sqrt{x-2}}{\sqrt{5-x}}$.
+    rationale: 'The expressions inside each square root must be non-negative. Therefore,
+      $x-2 \ge 0$, so $x\ge2$, and $5 - x \ge 0$, so $x \le 5$.
+      Also, the denominator cannot be equal to zero, so $5-x>0$, which gives $x<5$.
+      Therefore, the domain of the expression is $\boxed{[2,5)}$.'
+  - answer: '24'
+    question: If $\det \mathbf{A} = 2$ and $\det \mathbf{B} = 12$, then find $\det (\mathbf{A}
+      \mathbf{B})$.
+    rationale: We have that $\det (\mathbf{A} \mathbf{B}) = (\det \mathbf{A})(\det \mathbf{B})
+      = (2)(12) = \boxed{24}$.
+  - answer: '16'
+    question: Terrell usually lifts two 20-pound weights 12 times. If he uses two 15-pound
+      weights instead, how many times must Terrell lift them in order to lift the same
+      total weight?
+    rationale: 'If Terrell lifts two 20-pound weights 12 times, he lifts a total of
+      $2\cdot 12\cdot20=480$ pounds of weight.
+      If he lifts two 15-pound weights instead for $n$ times, he will lift a total of
+      $2\cdot15\cdot n=30n$ pounds of weight. Equating this to 480 pounds, we can solve
+      for $n$: \begin{align*} 30n&=480\\ \Rightarrow\qquad n&=480/30=\boxed{16} \end{align*}'
+  - answer: -\frac{2}{3}
+    question: If the system of equations \begin{align*} 6x-4y&=a, \\ 6y-9x &=b. \end{align*}
+      has a solution $(x, y)$ where $x$ and $y$ are both nonzero, find $\frac{a}{b}$,
+      assuming $b$ is nonzero.
+    rationale: If we multiply the first equation by $-\frac{3}{2}$, we obtain $$6y-9x=-\frac{3}{2}a$$.
+      Since we also know that $6y-9x=b$, we have $$-\frac{3}{2}a=b\Rightarrow\frac{a}{b}=\boxed{-\frac{2}{3}}$$.
+  demo_template: '[[Question]]:
+    {question}
+    [[Solution]]:
+    Let''s think step by step.
+    {rationale}
+    [[Final Answer]]:
+    ${answer}$
+    '
+  exam_template: '{demo}
+    [[Question]]:
+    {question}
+    [ROLESWITCHING assistant:][[Solution]]:
+    Let''s think step by step.
+    '
+07/11 10:53:36 PM registry            INFO: Component [exam_scorer] type： math, lbt.datasets_adapter.math_dataset.MathExamScorer
+07/11 10:53:36 PM registry            INFO: exam_scorer `math` config:
+  recall_mode: false
+07/11 10:53:36 PM registry            INFO: Component [model] type： huggingface, lbt.models.base.HFModel
+07/11 10:53:36 PM registry            INFO: model `huggingface` config:
+  pt_path: null
+  max_new_tokens: 1024
+  conv_template_type: null
+  name: llama-3-8b
+  fastchat: false
+  path: /dev_data/zjh/llama-models/Meta-Llama-3-8B-Instruct
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:04<00:00,  1.04s/it]
+0it [00:00, ?it/s]                                                                                                                                      Setting `pad_token_id` to `eos_token_id`:128009 for open-end generation.
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:11<00:00,  1.30s/it]
+1it [00:17, 17.26s/it]██████████████████████████████████████████████████████████████████████████                          | 7/9 [00:11<00:02,  1.23s/it]Setting `pad_token_id` to `eos_token_id`:128009 for open-end generation.
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:10<00:00,  1.21s/it]
+2it [00:28, 13.54s/it]██████████████████████████████████████████████████████████████████████████                          | 7/9 [00:10<00:02,  1.14s/it]Setting `pad_token_id` to `eos_token_id`:128009 for open-end generation.
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:22<00:00,  2.52s/it]
+3it [00:50, 17.73s/it]█████████████████████████████████████████████████████████████                                       | 6/9 [00:22<00:08,  2.78s/it]Setting `pad_token_id` to `eos_token_id`:128009 for open-end generation.
