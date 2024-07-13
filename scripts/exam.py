@@ -12,6 +12,10 @@ from datasets import Dataset, load_from_disk
 
 import sys
 import wandb
+# Add requirement for wandb core
+import sys
+if sys.version_info >= (3, 11):
+    wandb.require("core")
 from accelerate import Accelerator
 from accelerate.utils import find_executable_batch_size
 # Specify CUDA_VISIBLE_DEVICES in the command, 
@@ -262,8 +266,6 @@ if __name__ == "__main__":
 
     if accelerator.is_main_process:
         accelerator.log({'score_list':scores_list},step=teaching_i)
-    # End Wandb
-    accelerator.end_training()
 
     # Save the results
     output_dataset = Dataset.from_list(output_items)
@@ -271,3 +273,6 @@ if __name__ == "__main__":
     output_dataset.save_to_disk(args.output_path)
     output_dataset.to_csv(os.path.join(args.output_path, "dataset.csv"))
     output_dataset.to_json(os.path.join(args.output_path, "dataset.json"), indent=2)
+
+    # End Wandb
+    # accelerator.end_training()
